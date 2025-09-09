@@ -1,6 +1,6 @@
 # Job Portal Frontend (React)
 >This repository contains the frontend for a Job Portal application built using **React**. The Job Portal provides distinct functionalities for job seekers, companies, and platform administrators, offering an intuitive and responsive user interface.  
-Backend (Django) 👉 [Job Portal Backend](https://github.com/sravan-kumar-ta/Job-portal-Django.git)
+Backend (Django) 👉 [Job Portal Backend](https://github.com/laiba-javaid/Job-portal-backend.git)
 
 ## Features
 
@@ -91,8 +91,8 @@ Backend (Django) 👉 [Job Portal Backend](https://github.com/sravan-kumar-ta/Jo
 To get started, clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/sravan-kumar-ta/Job-portal-React.git
-cd Job-portal-React
+git clone https://github.com/laiba-javaid/Job-portal-frontend.git
+cd Job-portal-frontend
 npm install
 ```
 -----
