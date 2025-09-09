@@ -1,13 +1,30 @@
 import React from "react";
 
-const SubmitButton = ({ type = "submit", text = "Submit", isSubmitting }) => {
+const SubmitButton = ({ 
+   type = "submit", 
+   text = "Submit", 
+   isSubmitting, 
+   className = "",
+   loadingText = "Processing...",
+   ...props 
+}) => {
+   // Default styles that can be overridden
+   const defaultClasses = "mx-auto w-2/4 bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 flex items-center justify-center transition-all duration-200";
+   
+   // Merge default classes with custom className, giving priority to custom classes
+   const buttonClasses = className ? className : defaultClasses;
+   
+   // Add submitting state classes
+   const finalClasses = `${buttonClasses} ${
+      isSubmitting ? "cursor-not-allowed opacity-50" : ""
+   }`;
+
    return (
       <button
          type={type}
          disabled={isSubmitting}
-         className={`mx-auto w-2/4 bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 flex items-center justify-center ${
-            isSubmitting ? "cursor-not-allowed opacity-50" : ""
-         }`}
+         className={finalClasses}
+         {...props}
       >
          {isSubmitting && (
             <svg
@@ -29,7 +46,7 @@ const SubmitButton = ({ type = "submit", text = "Submit", isSubmitting }) => {
                ></path>
             </svg>
          )}
-         {isSubmitting ? "Processing..." : text}
+         {isSubmitting ? loadingText : text}
       </button>
    );
 };

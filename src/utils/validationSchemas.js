@@ -14,6 +14,41 @@ const registerValidationSchema = Yup.object().shape({
    confirmPassword: Yup.string()
       .oneOf([Yup.ref("password"), null], "Passwords must match")
       .required("Confirm Password is required"),
+   
+   // Company fields - conditional validation
+   company_title: Yup.string()
+      .when("role", {
+         is: "company",
+         then: (schema) => schema
+            .min(2, "Company name must be at least 2 characters")
+            .max(150, "Company name must be less than 150 characters")
+            .required("Company name is required when registering as a company"),
+         otherwise: (schema) => schema.notRequired()
+      }),
+      
+   company_location: Yup.string()
+      .when("role", {
+         is: "company",
+         then: (schema) => schema
+            .max(150, "Location must be less than 150 characters"),
+         otherwise: (schema) => schema.notRequired()
+      }),
+      
+   company_description: Yup.string()
+      .when("role", {
+         is: "company",
+         then: (schema) => schema
+            .max(1000, "Description must be less than 1000 characters"),
+         otherwise: (schema) => schema.notRequired()
+      }),
+      
+   company_website: Yup.string()
+      .when("role", {
+         is: "company",
+         then: (schema) => schema
+            .url("Please enter a valid URL (e.g., https://www.example.com)"),
+         otherwise: (schema) => schema.notRequired()
+      }),
 });
 
 const loginValidationSchema = Yup.object().shape({
@@ -27,6 +62,10 @@ const userUpdateValidationSchema = registerValidationSchema.omit([
    "role",
    "password",
    "confirmPassword",
+   "company_title",
+   "company_location", 
+   "company_description",
+   "company_website"
 ]);
 
 const companyFormValidationSchema = Yup.object().shape({
