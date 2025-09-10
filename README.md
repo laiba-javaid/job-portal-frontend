@@ -20,7 +20,7 @@ Backend (Django) 👉 [Job Portal Backend](https://github.com/laiba-javaid/Job-p
 - **User Management**: Manage all user accounts, including job seekers and companies.
 - **Company Approvals**: Review and approve company registrations before they can create job listings.
 
-  ## 🎥 Demo Video
+### 🎥 Demo Video
 
 Watch the full working demo here: [Watch the demo](https://drive.google.com/file/d/1-ZFEBJVTbeBnlpLffAYIa6Cv7TW6LtLP/view?usp=sharing)
 
