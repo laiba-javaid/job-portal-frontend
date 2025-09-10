@@ -23,8 +23,7 @@ Backend (Django) 👉 [Job Portal Backend](https://github.com/laiba-javaid/Job-p
   ## 🎥 Demo Video
 
 Watch the full working demo here:
-
-[![Watch the demo] (https://drive.google.com/file/d/1-ZFEBJVTbeBnlpLffAYIa6Cv7TW6LtLP/view?usp=sharing)
+![Watch the demo] (https://drive.google.com/file/d/1-ZFEBJVTbeBnlpLffAYIa6Cv7TW6LtLP/view?usp=sharing)
 
 ## Tech Stack
 
